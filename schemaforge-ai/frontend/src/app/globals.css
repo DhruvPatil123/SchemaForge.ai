@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 4%;
+    --foreground: 240 10% 96%;
+    --card: 240 18% 8%;
+    --card-foreground: 240 10% 96%;
+    --primary: 245 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 14% 14%;
+    --secondary-foreground: 240 10% 90%;
+    --muted: 240 12% 12%;
+    --muted-foreground: 240 8% 58%;
+    --accent: 245 40% 18%;
+    --accent-foreground: 245 80% 75%;
+    --border: 240 12% 18%;
+    --input: 240 12% 18%;
+    --ring: 245 80% 60%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(139, 92, 246, 0.08), transparent);
+  }
+}
+
+/* React Flow overrides */
+.react-flow__controls button {
+  @apply !bg-card !border-border !text-foreground;
+}
+.react-flow__minimap {
+  @apply !rounded-lg !overflow-hidden;
+}
+
+html.light {
+  --background: 0 0% 98%;
+  --foreground: 240 10% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 10%;
+  --muted: 240 10% 94%;
+  --muted-foreground: 240 5% 40%;
+  --border: 240 10% 88%;
+  --input: 240 10% 88%;
+  --accent: 245 60% 94%;
+  --accent-foreground: 245 80% 35%;
+}
